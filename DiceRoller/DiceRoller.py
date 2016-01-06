@@ -8,8 +8,18 @@ roll = random.randrange(1, 6)
 print (roll)
 
 numDice = input("How many dice are we rolling?")
-print ("Great, we're rolling " + numDice + " dice!")
+numDice = int(numDice)
+print ("Great, we're rolling " + str(numDice) + " dice!")
 sides = input ("Now how many sides do they have?")
-print ("So we have " + numDice + " of " + sides + " apiece, or " + numDice + "d" + sides)
-print ("Your result is: " + (sides * numDice))
-print ("Hope you smashed that orc!")
+sides = int(sides)
+print ("So we have " + str(numDice) + "d" + str(sides))
+result = random.randint(1, sides) * numDice
+print ("Your result is: " + str(result))
+hitDice = random.randint(1, 20)
+print ("And with a hit dice of: " + str(hitDice))
+if hitDice == 20:
+    print ("You smashed that bloody orc!")
+elif hitDice == 1:
+    print("Critical Miss!")
+else:
+    print("Nothing special!")
